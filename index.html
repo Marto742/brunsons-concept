@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brunson's MMA & Fitness – MMA, BJJ & Kickboxing Gym in Wilmington, NC</title>
+<meta name="description" content="MMA, Brazilian Jiu Jitsu, Muay Thai, wrestling and kids classes in Wilmington, NC. Founded by UFC veteran Derek Brunson. Your first class is free.">
+<style>
+:root{--bg:#0d0d0d;--card:#181818;--line:#2a2a2a;--gold:#e8b931;--gold-d:#c99a14;--text:#f2f2f2;--muted:#a8a8a8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55;padding-bottom:72px}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif;font-stretch:condensed;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
+h2{font-size:clamp(28px,6vw,42px);margin-bottom:8px}
+.eyebrow{color:var(--gold);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+.sub{color:var(--muted);max-width:620px;margin-bottom:28px}
+
+/* concept ribbon */
+.ribbon{background:var(--gold);color:#111;font-size:12px;font-weight:700;text-align:center;padding:6px 12px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(13,13,13,.95);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;font-size:15px}
+.logo b{display:grid;place-items:center;width:36px;height:36px;background:var(--gold);color:#111;border-radius:6px;font-size:22px}
+nav ul{display:none;list-style:none;gap:22px;font-size:14px}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--gold)}
+.menu-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:8px 12px;font-size:14px}
+@media(min-width:860px){nav ul{display:flex}.menu-btn{display:none}}
+
+/* hero */
+.hero{position:relative;padding:64px 0 56px;border:0;background:
+ linear-gradient(180deg,rgba(13,13,13,.25),var(--bg) 92%),
+ repeating-linear-gradient(135deg,#1c1c1c 0 14px,#161616 14px 28px)}
+.photo-note{position:absolute;top:14px;right:14px;font-size:11px;color:#777;border:1px dashed #555;padding:4px 8px;border-radius:4px}
+.hero h1{font-size:clamp(40px,11vw,76px);margin-bottom:14px}
+.hero h1 span{color:var(--gold)}
+.hero p{color:#cfcfcf;max-width:520px;font-size:17px;margin-bottom:26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:8px;font-weight:800;text-decoration:none;font-size:16px}
+.btn-gold{background:var(--gold);color:#111}.btn-gold:hover{background:var(--gold-d)}
+.btn-ghost{border:2px solid #fff;color:#fff}
+
+/* trust */
+.trust{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:36px}
+.trust div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.trust strong{display:block;color:var(--gold);font-size:20px}
+.trust span{font-size:13px;color:var(--muted)}
+@media(min-width:700px){.trust{grid-template-columns:repeat(4,1fr)}}
+
+/* cards */
+.grid{display:grid;gap:14px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.card h3{font-size:22px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:15px}
+.tag{display:inline-block;font-size:11px;font-weight:700;color:#111;background:var(--gold);border-radius:4px;padding:2px 7px;margin-bottom:10px}
+
+/* schedule */
+.tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:14px;padding-bottom:4px}
+.tabs button{flex:0 0 auto;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:700;font-size:14px;cursor:pointer}
+.tabs button.on{background:var(--gold);color:#111;border-color:var(--gold)}
+.slot{display:flex;justify-content:space-between;gap:12px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+.slot b{color:var(--gold);min-width:78px}
+.slot small{color:var(--muted)}
+.ph{color:#777;font-style:italic;font-size:13px;margin-top:8px}
+
+/* pricing */
+.price{font-size:42px;font-weight:800;font-family:"Arial Narrow",Arial,sans-serif}
+.price small{font-size:15px;color:var(--muted);font-weight:400}
+.card.feat{border-color:var(--gold)}
+.card ul{list-style:none;margin:14px 0 18px}
+.card li{padding:5px 0;color:#d6d6d6;font-size:15px}
+.card li::before{content:"✓ ";color:var(--gold);font-weight:700}
+
+/* coaches */
+.avatar{width:100%;aspect-ratio:4/3;border-radius:8px;margin-bottom:14px;display:grid;place-items:center;color:#666;font-size:12px;border:1px dashed #444;background:repeating-linear-gradient(135deg,#1c1c1c 0 10px,#171717 10px 20px)}
+
+/* reviews */
+blockquote{background:var(--card);border-left:3px solid var(--gold);border-radius:8px;padding:18px;color:#ddd;font-size:15px}
+blockquote cite{display:block;margin-top:10px;color:var(--gold);font-style:normal;font-weight:700;font-size:13px}
+
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:8px}
+summary{font-weight:700;cursor:pointer}
+details p{color:var(--muted);margin-top:10px;font-size:15px}
+
+/* contact */
+.contact a{color:var(--gold);font-weight:700}
+.map{height:220px;border-radius:12px;border:1px dashed #444;display:grid;place-items:center;color:#666;font-size:13px;background:#141414}
+footer{padding:28px 0;color:#777;font-size:13px;border-top:1px solid var(--line)}
+
+/* sticky mobile bar */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:1fr 1.4fr;gap:8px;padding:10px;background:rgba(13,13,13,.97);border-top:1px solid var(--line)}
+.sticky .btn{min-height:50px;padding:0 10px}
+@media(min-width:860px){.sticky{display:none}body{padding-bottom:0}}
+
+/* what changed panel */
+.changes{position:fixed;right:14px;bottom:84px;z-index:40;max-width:320px}
+.changes summary{background:#fff;color:#111;border-radius:999px;padding:10px 16px;font-size:13px;box-shadow:0 6px 20px rgba(0,0,0,.5);list-style:none;text-align:center}
+.changes[open] summary{border-radius:12px 12px 0 0}
+.changes ol{background:#fff;color:#222;font-size:13px;padding:14px 14px 14px 32px;border-radius:0 0 12px 12px;max-height:55vh;overflow:auto}
+.changes li{margin-bottom:7px}
+@media(min-width:860px){.changes{bottom:20px}}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Website concept prepared for Brunson's MMA &amp; Fitness — not the live site</div>
+
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#top"><b>B</b>Brunson's MMA &amp; Fitness</a>
+  <nav><ul>
+   <li><a href="#about">About</a></li><li><a href="#programs">Programs</a></li><li><a href="#schedule">Schedule</a></li>
+   <li><a href="#pricing">Pricing</a></li><li><a href="#coaches">Coaches</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li>
+  </ul></nav>
+  <button class="menu-btn" aria-label="Open menu">Menu</button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <span class="photo-note">Your gym photo here (WebP, &lt;150 KB)</span>
+ <div class="wrap">
+  <p class="eyebrow">Wilmington, North Carolina</p>
+  <h1>Train with a <span>UFC veteran.</span><br>Start for free.</h1>
+  <p>MMA, Brazilian Jiu Jitsu, Muay Thai, wrestling and kids classes at Independence Mall. Beginners welcome. Your first class is on us.</p>
+  <div class="btns">
+   <a class="btn btn-gold" href="#contact">Claim your free class</a>
+   <a class="btn btn-ghost" href="tel:+19107828212">Call (910) 782-8212</a>
+  </div>
+  <div class="trust">
+   <div><strong>4.8★</strong><span>from 61 Google reviews</span></div>
+   <div><strong>Black belt</strong><span>under Renzo Gracie</span></div>
+   <div><strong>Since 2017</strong><span>at Independence Mall</span></div>
+   <div><strong>Kids program</strong><span>anti-bullying focus</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="wrap">
+  <p class="eyebrow">About</p>
+  <h2>Built by a Wilmington native</h2>
+  <p class="sub">Derek Brunson grew up in Wilmington, became a 3x NCAA All-American wrestler and fought for years in the UFC. He opened this gym to give the community the coaching he wished he'd had. Whether you want to compete, get in shape or learn to defend yourself, you'll get real instruction from people who've done it at the highest level.</p>
+ </div>
+</section>
+
+<section id="programs">
+ <div class="wrap">
+  <p class="eyebrow">Programs</p>
+  <h2>Find your discipline</h2>
+  <p class="sub">All levels. No experience needed.</p>
+  <div class="grid">
+   <div class="card"><span class="tag">Adults</span><h3>MMA</h3><p>Striking, wrestling and grappling put together. For fitness or for the cage.</p></div>
+   <div class="card"><span class="tag">Adults</span><h3>Brazilian Jiu Jitsu</h3><p>Gi and No-Gi classes. Learn to control and submit — safely.</p></div>
+   <div class="card"><span class="tag">Adults</span><h3>Muay Thai &amp; Kickboxing</h3><p>Pads, bag work and technique. A serious workout that teaches real skills.</p></div>
+   <div class="card"><span class="tag">Adults</span><h3>Wrestling</h3><p>Taught by NCAA All-Americans. The base of every great fighter.</p></div>
+   <div class="card"><span class="tag">Ages 5+</span><h3>Kids Martial Arts</h3><p>Confidence, discipline and anti-bullying skills in a supervised setting.</p></div>
+   <div class="card"><span class="tag">All</span><h3>Fitness &amp; Weights</h3><p>Weight room access to build strength alongside your training.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="schedule">
+ <div class="wrap">
+  <p class="eyebrow">Schedule</p>
+  <h2>This week's classes</h2>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div id="slots"></div>
+  <p class="ph">Sample layout — real class times to be filled in from your current schedule.</p>
+ </div>
+</section>
+
+<section id="pricing">
+ <div class="wrap">
+  <p class="eyebrow">Pricing</p>
+  <h2>Simple memberships</h2>
+  <p class="sub">Every membership starts with a free trial class.</p>
+  <div class="grid">
+   <div class="card"><h3>Free trial</h3><div class="price">$0</div><ul><li>One class of your choice</li><li>Loaner gloves available</li><li>No commitment</li></ul><a class="btn btn-ghost" href="#contact">Book it</a></div>
+   <div class="card feat"><span class="tag">Most popular</span><h3>All classes</h3><div class="price">$130<small> /month</small></div><ul><li>Every martial art program</li><li>12-month membership</li><li>Weight room access</li></ul><a class="btn btn-gold" href="#contact">Start free</a></div>
+   <div class="card"><h3>Month-to-month</h3><div class="price">$—<small> /month</small></div><ul><li>No long contract</li><li>Single-program options</li><li>Drop-in mat fee available</li></ul><a class="btn btn-ghost" href="#contact">Ask us</a></div>
+  </div>
+  <p class="ph">Family discount: 10% off for 2 members, 15% off for 3. Month-to-month price to be confirmed.</p>
+ </div>
+</section>
+
+<section id="coaches">
+ <div class="wrap">
+  <p class="eyebrow">Coaches</p>
+  <h2>Learn from fighters</h2>
+  <div class="grid">
+   <div class="card"><div class="avatar">Coach photo</div><h3>Derek Brunson</h3><p>Owner. Renzo Gracie BJJ black belt, 3x NCAA D2 All-American wrestler, longtime UFC middleweight.</p></div>
+   <div class="card"><div class="avatar">Coach photo</div><h3>Dre Herd</h3><p>Striking coach. Golden Gloves champion and pro MMA fighter. Teaches MMA, kickboxing and Muay Thai.</p></div>
+   <div class="card"><div class="avatar">Coach photo</div><h3>Austin Trotman</h3><p>Wrestling coach. D1 All-American, 2x NC state champion, pro MMA fighter.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <p class="eyebrow">Reviews</p>
+  <h2>What members say</h2>
+  <div class="grid">
+   <blockquote>“Never felt like I found my home gym until I found Brunsons.”<cite>Alex S.</cite></blockquote>
+   <blockquote>“The coaches and staff are all incredibly warm and friendly.”<cite>Shannon M.</cite></blockquote>
+   <blockquote>“Their kids program is superb!”<cite>Carma R.</cite></blockquote>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <p class="eyebrow">FAQ</p>
+  <h2>Before your first class</h2>
+  <details><summary>Do I need experience?</summary><p>No. Most members started as complete beginners. Coaches will pair you with the right partners.</p></details>
+  <details><summary>What should I bring?</summary><p>Comfortable workout clothes and water. For kickboxing and Muay Thai, 16oz gloves and shin guards — we have loaners if you don't.</p></details>
+  <details><summary>Do I sign a waiver?</summary><p>Yes, everyone signs a waiver before stepping on the mat. Minors need a parent or guardian to sign.</p></details>
+  <details><summary>Do you offer month-to-month?</summary><p>Yes. Call or message us for current packages.</p></details>
+  <details><summary>Can my kids stay busy while I train?</summary><p>Yes — kids can watch shows or play under staff supervision while you're in class.</p></details>
+ </div>
+</section>
+
+<section id="contact" class="contact">
+ <div class="wrap">
+  <p class="eyebrow">Visit us</p>
+  <h2>Claim your free class</h2>
+  <p class="sub">Inside Independence Mall, next to the Dillard's wing.<br>3500 Oleander Dr, Wilmington, NC 28403</p>
+  <p style="margin-bottom:6px">📞 <a href="tel:+19107828212">(910) 782-8212</a></p>
+  <p style="margin-bottom:22px">✉️ <a href="mailto:brunsonsmmaandfitness@gmail.com">brunsonsmmaandfitness@gmail.com</a></p>
+  <div class="map">Google Map embed</div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Brunson's MMA &amp; Fitness · Wilmington, NC</div></footer>
+
+<div class="sticky">
+ <a class="btn btn-ghost" href="tel:+19107828212">📞 Call</a>
+ <a class="btn btn-gold" href="#contact">Free class</a>
+</div>
+
+<details class="changes">
+ <summary>What changed vs. your current site?</summary>
+ <ol>
+  <li><b>Loads fast on phones.</b> One light hero image instead of a slider. Current site: main content shows after 13.6 s on mobile.</li>
+  <li><b>Tap to call</b> everywhere + a sticky Call / Free class bar. Currently the phone number can't be tapped.</li>
+  <li><b>Working email link.</b> The current one points to “#” and does nothing.</li>
+  <li><b>Free class button you can see.</b> Currently small yellow text on a light background.</li>
+  <li><b>Prices on the page</b> instead of “email us”.</li>
+  <li><b>Schedule right on the page</b>, tabbed by day.</li>
+  <li><b>Up-to-date content:</b> © 2026, no COVID notes, no theme demo leftovers, typos fixed.</li>
+  <li><b>Google-ready:</b> real H1 and meta description, pinch-zoom allowed.</li>
+  <li><b>Your own photos</b> instead of a UFC fight photo you may not hold the rights to.</li>
+ </ol>
+</details>
+
+<script>
+const days=["Mon","Tue","Wed","Thu","Fri","Sat"];
+const data={
+ Mon:[["6:00 PM","MMA","All levels"],["7:00 PM","BJJ Gi","All levels"]],
+ Tue:[["5:00 PM","Kids Martial Arts","Ages 5–12"],["6:00 PM","Muay Thai","All levels"]],
+ Wed:[["12:00 PM","Wrestling","with Derek Brunson"],["6:00 PM","Kickboxing","All levels"]],
+ Thu:[["12:00 PM","BJJ No-Gi","with Derek Brunson"],["6:00 PM","MMA","All levels"]],
+ Fri:[["5:00 PM","Kids Martial Arts","Ages 5–12"],["6:00 PM","Open Mat","Members"]],
+ Sat:[["10:00 AM","BJJ Gi","All levels"]]
+};
+const tabs=document.getElementById("tabs"),slots=document.getElementById("slots");
+function show(d){
+ [...tabs.children].forEach(b=>b.classList.toggle("on",b.textContent===d));
+ slots.innerHTML=data[d].map(s=>`<div class="slot"><b>${s[0]}</b><span style="flex:1">${s[1]}</span><small>${s[2]}</small></div>`).join("");
+}
+days.forEach(d=>{const b=document.createElement("button");b.textContent=d;b.onclick=()=>show(d);tabs.appendChild(b)});
+const t=days[(new Date().getDay()+6)%7]||"Mon";show(data[t]?t:"Mon");
+</script>
+</body>
+</html>
